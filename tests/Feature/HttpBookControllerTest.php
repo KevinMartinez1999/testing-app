@@ -37,7 +37,7 @@ class HttpBookControllerTest extends TestCase
             'author' => 'Miguel de Cervantes',
             'price' => 10.99,
         ]);
-        $libro = Book::findBySlug('el-quijote');
+        $libro = Book::findBySlug('el-quijote')->where('slug', 'el-quijote')->first();
         $this->assertEquals('El Quijote', $libro->title);
     }
 }
